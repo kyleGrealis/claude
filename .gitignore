@@ -1,0 +1,133 @@
+# ====================
+# Claude Code - Machine-Specific
+# ====================
+
+# Local settings (machine-specific paths, API keys, etc.)
+**/settings.local.json
+
+# Conversation history and state
+**/.claude/conversations/
+**/.claude/history/
+**/.claude/cache/
+**/.claude/logs/
+
+# MCP server data (may contain machine-specific paths)
+**/.claude/mcp/
+
+# ====================
+# Windows/WSL Artifacts
+# ====================
+
+# Zone.Identifier files (Windows security metadata)
+*:Zone.Identifier
+
+# Windows shortcuts and desktop.ini
+*.lnk
+desktop.ini
+Thumbs.db
+ehthumbs.db
+
+# ====================
+# macOS
+# ====================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ====================
+# Linux
+# ====================
+
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# ====================
+# Editors and IDEs
+# ====================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# RStudio
+.Rproj.user/
+*.Rproj
+
+# JetBrains
+.idea/
+
+# Vim
+*.swp
+*.swo
+*.swn
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# ====================
+# R Projects (not synced across machines)
+# ====================
+
+# R package build artifacts
+*.tar.gz
+*.Rcheck/
+
+# R session files
+.RData
+.Rhistory
+.RDataTmp
+
+# Packrat/renv (machine-specific library paths)
+packrat/
+renv/
+
+# ====================
+# General Development
+# ====================
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# Node (if any tooling uses it)
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs
+*.log
+
+# ====================
+# Temporary Files
+# ====================
+
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
