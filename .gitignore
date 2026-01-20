@@ -131,3 +131,9 @@ temp/
 *.temp
 *.bak
 *.backup
+
+# ====================
+# AI files
+# ====================
+CLAUDE.md
+GEMINI.md
