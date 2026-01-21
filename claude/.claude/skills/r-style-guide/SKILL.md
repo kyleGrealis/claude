@@ -13,16 +13,6 @@ description: Kyle's R coding style guide with tidyverse conventions and personal
 2. **Strings with apostrophes** — `"Don't know"` not `'Don\'t know'`
 3. **User-facing messages** — when message naturally contains apostrophes
 
-```r
-# GOOD
-x <- 'simple string'
-pattern <- "\\d{3}-\\d{4}"
-message <- "User's input is invalid"
-
-# BAD
-x <- "simple string"
-```
-
 ## Function Arguments & Indentation
 
 **Arguments MUST start on a new line** after opening parenthesis. Never vertically align.
@@ -79,23 +69,7 @@ result <- data %>%
   filter(status == 'active')
 ```
 
-## Assignment
-
-- **Use `<-`** not `=` for assignment
-- Exception: function arguments use `=`
-
-## Spacing
-
-- Space after commas: `c(1, 2, 3)`
-- Spaces around operators: `x + y`, `x == 5`
-- Space after `#` in comments
-- No spaces around `::` or `:::`
-- Space before opening brace: `if (x) {`
-
-## Line Length
-
-- **Maximum 90 characters**
-- Break at logical points
+- **Maximum 90 characters** per line
 
 ## Markdown Lists — CRITICAL
 
@@ -110,61 +84,3 @@ Next paragraph.
 ```
 
 Without trailing spaces, rendering breaks.
-
-## Naming Conventions
-
-- **snake_case** for functions and variables
-- **SCREAMING_SNAKE_CASE** for constants
-- **PascalCase** for S3/S4 class names only
-- No dots in function names (except S3 methods)
-
-```r
-# GOOD
-calculate_summary_stats <- function(data, na_rm = TRUE) { }
-MAX_ITERATIONS <- 1000
-
-# BAD
-calcSummaryStats <- function(data) { }
-calc.stats <- function(data) { }
-```
-
-## Control Flow
-
-```r
-# GOOD
-if (x > 10) {
-  do_something()
-} else {
-  do_other_thing()
-}
-
-# One-liner OK if short
-result <- if (x > 10) 'high' else 'low'
-```
-
-## Comments
-
-- Space after `#`
-- Explain WHY, not WHAT
-- Use roxygen2 `#'` for documentation
-
-## Red Flags to Avoid
-
-- **`attach()`** — namespace conflicts
-- **`setwd()`** — breaks reproducibility (use `here::here()`)
-- **`=` for assignment** — use `<-`
-- **`%>%`** — use `|>`
-- **Double quotes for simple strings** — use single quotes
-- **Vertical alignment** — never align arguments
-- **Growing vectors in loops** — pre-allocate or vectorize
-- **Missing `na.rm`** — be explicit
-- **Hard-coded paths** — use `here::here()`
-
-## Summary
-
-Goal: **readable, maintainable code** following modern R conventions.
-
-1. Favor readability over cleverness
-2. Be consistent within a project
-3. Write code you'll understand in 6 months
-4. Document the WHY, not the WHAT
