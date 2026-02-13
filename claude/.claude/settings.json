@@ -1,16 +1,5 @@
 {
-  "env": {
-    "DISABLE_AUTOUPDATER": "1"
-  },
   "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true
-  },
-  "alwaysThinkingEnabled": true,
-  "autoAcceptEdits": false,
-  "editor": "positron",
-  "confirmBeforeExecution": true
+    "context7@claude-plugins-official": true
+  }
 }

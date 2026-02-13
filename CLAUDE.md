@@ -41,19 +41,20 @@ stow --adopt claude
 | Skill | Purpose |
 |-------|---------|
 | `personal-context` | Kyle's background, expertise, communication preferences |
-| `r-style-guide` | R coding style (single quotes, `|>`, 2-space indent, no vertical alignment) |
+| `r-style-guide` | R coding style (double quotes, `|>`, 2-space indent, no vertical alignment) |
 | `r-package-conventions` | usethis workflow, roxygen2, testthat standards |
 | `shiny-patterns` | Traditional Shiny structure with bslib/shinywidgets |
 | `skill-writer` | Creating new Agent Skills |
 
 ## Key Style Rules (from r-style-guide)
 
-- **Quotes**: Single quotes unless regex or apostrophe in string
+- **Quotes**: Double quotes (tidyverse default)
 - **Pipe**: Native `|>` not `%>%`
 - **Assignment**: `<-` not `=`
 - **Indentation**: 2 spaces, arguments on new lines, NO vertical alignment
 - **Line length**: Max 90 characters
 - **Markdown lists**: 2 trailing spaces after each line
+- **Linting**: Code must pass `lintr` and `styler`
 
 ## Adding New Agents
 

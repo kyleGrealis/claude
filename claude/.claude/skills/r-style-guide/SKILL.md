@@ -1,17 +1,15 @@
 ---
 name: r-style-guide
-description: Kyle's R coding style guide with tidyverse conventions and personal preferences. Use when writing or reviewing R code to ensure consistency. Covers quotes, indentation, pipes, naming, and markdown formatting.
+description: Kyle's R coding style guide following tidyverse conventions. Use when writing or reviewing R code to ensure consistency. Covers quotes, indentation, pipes, naming, and markdown formatting.
 ---
 
 # Kyle's R Style Guide
 
 ## Quote Usage
 
-**ALWAYS use single quotes** unless one of these exceptions applies:
+**ALWAYS use double quotes** unless one of these exceptions applies:
 
-1. **Regex expressions** — double quotes for patterns
-2. **Strings with apostrophes** — `"Don't know"` not `'Don\'t know'`
-3. **User-facing messages** — when message naturally contains apostrophes
+1. **Strings with double quotes inside** — `'She said "hello"'` not `"She said \"hello\""`
 
 ## Function Arguments & Indentation
 
@@ -60,16 +58,22 @@ formula <- outcome ~ var1 + var2 +
 ```r
 # GOOD
 result <- data |>
-  filter(status == 'active') |>
+  filter(status == "active") |>
   group_by(category) |>
   summarize(mean_value = mean(value, na.rm = TRUE))
 
 # BAD
 result <- data %>%
-  filter(status == 'active')
+  filter(status == "active")
 ```
 
 - **Maximum 90 characters** per line
+
+## Linting & Formatting
+
+- All R code must pass `lintr::lint_package()` checks
+- All R code should be formatted with `styler::style_pkg()`
+- Pre-commit hooks enforce both in projects that use them
 
 ## Markdown Lists — CRITICAL
 
