@@ -1,18 +1,44 @@
 # ====================
-# Claude Code - Machine-Specific
+# Claude Code - Runtime & Machine-Specific
 # ====================
+
+# Credentials - NEVER COMMIT!
+**/.credentials.json
+**/credentials.json
+*.credentials.json
 
 # Local settings (machine-specific paths, API keys, etc.)
 **/settings.local.json
 
-# Conversation history and state
+# Claude Code runtime directories
+**/.claude/cache/
+**/.claude/debug/
+**/.claude/downloads/
+**/.claude/file-history/
+**/.claude/ide/
+**/.claude/paste-cache/
+**/.claude/plans/
+**/.claude/projects/
+**/.claude/session-env/
+**/.claude/shell-snapshots/
+**/.claude/statsig/
+**/.claude/telemetry/
+**/.claude/todos/
+
+# Command and conversation history
+**/.claude/history.jsonl
 **/.claude/conversations/
 **/.claude/history/
-**/.claude/cache/
 **/.claude/logs/
 
 # MCP server data (may contain machine-specific paths)
 **/.claude/mcp/
+
+# Plugins (may have machine-specific state)
+**/.claude/plugins/
+
+# Archive directories (deprecated/backup code)
+**/archive/
 
 # ====================
 # Windows/WSL Artifacts
@@ -107,7 +133,6 @@ renv/
 .env.*
 *.pem
 *.key
-credentials.json
 
 # Node (if any tooling uses it)
 node_modules/
