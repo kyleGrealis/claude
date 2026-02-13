@@ -1,0 +1,26 @@
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Rprofile
+.Renviron
+.Rproj.user/
+
+# Quarto
+/.quarto/
+**/*.quarto_ipynb
+_site/
+_freeze/
+docs/
+
+# Data (if applicable - uncomment for analysis projects)
+# data/
+
+# OS
+.DS_Store
+
+# LLM & AI
+CLAUDE.md
+.claude/
+GEMINI.md
+.gemini/

@@ -1,0 +1,17 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^\.pre-commit-config\.yaml$
+^\.lintr$
+^LICENSE\.md$
+^README\.Rmd$
+^README\.html$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.httr-oauth$
+^\.secrets$
+^vignettes/articles$
+^data-raw$
+^CLAUDE\.md$
+^\.claude$

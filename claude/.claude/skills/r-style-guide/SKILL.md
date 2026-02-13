@@ -75,16 +75,31 @@ result <- data %>%
 - All R code should be formatted with `styler::style_pkg()`
 - Pre-commit hooks enforce both in projects that use them
 
-## Markdown Lists — CRITICAL
+## Markdown & Writing Style
 
-Bulleted lists in markdown/Quarto **MUST have 2 trailing spaces** after each line:
+### Lists (for .md/.Rmd/.qmd files)
+Bulleted lists in markdown/RMarkdown/Quarto documents:
+* **Use `+` or `*` for bullets** (never `-`)
+* Put 2 trailing spaces after each line for proper rendering
 
 ```markdown
-Introduction with 2 spaces at end.
-- First item with 2 trailing spaces
-- Second item with 2 trailing spaces
+Introduction.
++ First item
++ Second item
 
 Next paragraph.
 ```
 
-Without trailing spaces, rendering breaks.
+Note: This applies to markdown files (.md/.Rmd/.qmd), not R code (.R files).
+
+### Em Dashes
+**NEVER use em dashes (—)** in any outward-facing documentation, code comments, or user-visible strings. Rewrite sentences to avoid them.
+
+### Spelling
+Always use **US English spelling**:
+* "favor" not "favour"
+* "color" not "colour"
+* "analyze" not "analyse"
+
+### URLs
+When referencing www.kylegrealis.com, always include the "www" subdomain.

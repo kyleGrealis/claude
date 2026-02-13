@@ -1,0 +1,43 @@
+url: https://www.kylegrealis.com/PACKAGE_NAME
+
+template:
+  bootstrap: 5
+  bslib:
+    preset: bootstrap
+
+home:
+  title: "PACKAGE_NAME"
+  description: "PACKAGE_DESCRIPTION"
+
+authors:
+  Kyle Grealis:
+    href: https://www.kylegrealis.com
+
+navbar:
+  structure:
+    left: [home, reference, articles, news]
+    right: [search, github]
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: Articles
+      menu:
+      - text: Getting Started
+        href: articles/getting-started.html
+    news:
+      text: Changelog
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/USERNAME/PACKAGE_NAME
+
+reference:
+  - title: "Main Functions"
+    desc: "Core functionality"
+    contents:
+      - starts_with("PACKAGE_PREFIX")

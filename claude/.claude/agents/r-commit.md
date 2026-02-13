@@ -24,9 +24,9 @@ updated: cleaning pipeline fixed `case_when()` logic
 ```
 
 Pattern: `<past-tense-verb>: <what> <key detail>`
-- Past tense: "updated", "fixed", "added", "removed"
-- Backticks for code: `function_name()`, `variable`
-- No period at end
++ Past tense: "updated", "fixed", "added", "removed"
++ Backticks for code: `function_name()`, `variable`
++ No period at end
 
 **Conventional commits** (for significant package changes):
 ```
@@ -38,21 +38,21 @@ feat (tbl_summary): add missing data display option
 ```
 
 Pattern: `<type>(<scope>): <subject>`
-- Types: feat, fix, docs, test, refactor, chore
-- Scope: function name from file path (e.g., `R/tbl_summary.R` → `tbl_summary`)
-- Body: 3-5 bullets max for significant changes
++ Types: feat, fix, docs, test, refactor, chore
++ Scope: function name from file path (e.g., `R/tbl_summary.R` → `tbl_summary`)
++ Body: 3-5 bullets max for significant changes
 
 ## When to Use Each
 
 **Simple style**:
-- Small tweaks, typos, WIP commits
-- Single-file changes
-- Non-package projects (always)
++ Small tweaks, typos, WIP commits
++ Single-file changes
++ Non-package projects (always)
 
 **Conventional commits**:
-- New features in packages
-- Breaking changes (add `!` after type)
-- Changes needing explanation
++ New features in packages
++ Breaking changes (add `!` after type)
++ Changes needing explanation
 
 ## Output
 
@@ -61,3 +61,7 @@ Output ONLY a code block with the commit message:
 ```
 <your crafted message here>
 ```
+
+## Important
+
+**NEVER run `git add`, `git commit`, or `git push` commands.** Only draft commit messages for the user to copy-paste.
