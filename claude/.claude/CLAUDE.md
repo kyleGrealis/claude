@@ -4,10 +4,18 @@
 
 When writing R code, always follow these conventions:
 
+### Quotes
+- **Single quotes** unless regex, apostrophe in string, or user-facing message
+- This differs from standard tidyverse conventions
+
 ### Line Length
 - **90 character max** (enforced by lintr in most projects)
 - Break long function calls across multiple lines
 - Put each argument on its own line for calls with 3+ arguments
+
+### Indentation
+- Arguments on new lines, 2-space indent
+- **NO vertical alignment**
 
 ### Lambdas
 - **Always use braces for multi-line lambdas**: `\(x) { ... }`
@@ -21,9 +29,26 @@ When writing R code, always follow these conventions:
 - Use `!!rlang::sym(col_name)` for column references from variables
 - Add `utils::globalVariables(c(...))` at file top to silence R CMD check notes
 
+### Markdown Formatting
+- Bulleted lists: 2 trailing spaces after each line
+
 ### Before Finishing R Work
 - **Run `lintr::lint_dir("R/")` and `lintr::lint_dir("tests/")` before declaring done**
 - Fix all lints before finishing
+
+## R Code Patterns
+
+- Use `|>` not `%>%`
+- Use `rlang::abort()` for package errors
+- tidyverse/tidymodels default approach
+
+## Communication
+
+- One troubleshooting step at a time
+- Max 2 solutions when troubleshooting
+- Include URLs/DOIs for references
+- Define acronyms on first use
+- Say "I don't know" if unsure
 
 ## Git
 
