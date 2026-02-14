@@ -19,7 +19,8 @@ Every package should:
 * **CITATION.md** - Citation metadata (template in `~/.claude/templates/`)
 * **NEWS.md** - User-focused changelog (template in `~/.claude/templates/`)
 * **README.md** - Package overview with examples
-* **_pkgdown.yml** - pkgdown website configuration (template in `~/.claude/templates/`)
+* **pkgdown/_pkgdown.yml** - pkgdown website config (template in `~/.claude/templates/`)
+* **inst/CITATION** - R citation file for `citation("pkg")`
 * **.lintr** - Linter configuration (template in `~/.claude/templates/`)
 * **.pre-commit-config.yaml** - Pre-commit hooks (template in `~/.claude/templates/`)
 * **.Rbuildignore** - Build exclusions (template in `~/.claude/templates/`)
@@ -27,6 +28,34 @@ Every package should:
 ### Optional
 * **CLAUDE.md** - Project-specific instructions for Claude Code (never committed to CRAN)
 * **data-raw/** - Data preparation scripts (in .Rbuildignore)
+
+## pkgdown Website Standards
+
+All packages use a standardized `pkgdown/_pkgdown.yml`. Use the template at
+`~/.claude/templates/_pkgdown.yml` and replace the UPPERCASE placeholders.
+
+### Required Sections (in order)
+1. **url** - `https://www.kyleGrealis.com/PACKAGE_NAME/`
+2. **development** - `mode: auto`
+3. **repo** - GitHub URLs for home, source, issue, user
+4. **template** - Bootstrap 5, `light-switch: true`, standard bslib
+5. **home.sidebar** - `[links, license, community, citation, authors, dev]`
+6. **navbar** - left: `[intro, reference, articles, news]`,
+   right: `[search, lightswitch, github]`
+7. **navbar.components** - "Get Started" as `intro`, Articles dropdown,
+   Changelog, GitHub icon with `fab fa-github fa-lg`
+8. **articles** - first group titled "Get Started" with `navbar: ~`
+9. **reference** - grouped by purpose with title and desc
+10. **footer** - `developed_by` / `built_with`
+11. **authors** - link to kylegrealis.com, sidebar roles `[aut, cre]`
+
+### Key Conventions
+* "Get Started" vignette is the first navbar item (replaces home icon)
+* All vignettes listed under `articles` with `navbar: ~` to suppress
+  auto-navbar entries; only non-intro articles appear in the Articles dropdown
+* bslib values: `font-size: 0.9rem`, `border-radius: 0.5rem`,
+  `btn-border-radius: 0.25rem`
+* No custom fonts or colors in the template (keep packages visually consistent)
 
 ## Documentation Standards (roxygen2)
 
