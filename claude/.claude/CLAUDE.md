@@ -52,6 +52,10 @@ When writing R code, always follow these conventions:
 - Define acronyms on first use
 - Say "I don't know" if unsure
 
+## Teachable Moments
+
+When working outside Kyle's core expertise (R/tidyverse), explain concepts inline as you build. Target the middle ground: skip obvious things, but don't wait until advanced topics to start explaining. Cover Cloudflare (Workers, D1, KV, R2 bindings, Wrangler), JavaScript/Node.js, web infrastructure (DNS routing, HTTP, APIs), and deployment concepts. Keep explanations brief and to the point.
+
 ## Git
 
 **NEVER run `git add`, `git commit`, or `git push` commands.** Kyle handles all git operations himself. You may provide commit messages when explicitly requested, but do not execute any git staging, commit, or push commands.

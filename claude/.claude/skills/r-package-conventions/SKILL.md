@@ -57,6 +57,20 @@ All packages use a standardized `pkgdown/_pkgdown.yml`. Use the template at
   `btn-border-radius: 0.25rem`
 * No custom fonts or colors in the template (keep packages visually consistent)
 
+## DESCRIPTION Standards
+
+### Required Fields
+Every package DESCRIPTION must include:
+* **URL** - GitHub repo first, then pkgdown site:
+  ```
+  URL: https://github.com/kyleGrealis/PACKAGE_NAME,
+      https://www.kyleGrealis.com/PACKAGE_NAME/
+  ```
+* **BugReports** - GitHub issues URL:
+  ```
+  BugReports: https://github.com/kyleGrealis/PACKAGE_NAME/issues
+  ```
+
 ## Documentation Standards (roxygen2)
 
 ### Function Documentation

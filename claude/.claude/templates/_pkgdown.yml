@@ -20,7 +20,27 @@ template:
 
 home:
   sidebar:
-    structure: [links, license, community, citation, authors, dev]
+    structure:
+      - links
+      - license
+      - community
+      - citation
+      - authors
+      - badges
+      - dev
+    components:
+      badges:
+        title: ~
+        text: |
+          [![R-CMD-check](https://github.com/kyleGrealis/PACKAGE_NAME/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kyleGrealis/PACKAGE_NAME/actions/workflows/R-CMD-check.yaml)
+
+          [![Lifecycle: LIFECYCLE_STAGE](https://img.shields.io/badge/lifecycle-LIFECYCLE_STAGE-LIFECYCLE_COLOR.svg)](https://lifecycle.r-lib.org/articles/stages.html#LIFECYCLE_STAGE)
+
+          [![License: LICENSE_TYPE](https://img.shields.io/badge/License-LICENSE_BADGE-blue.svg)](LICENSE_URL)
+
+          [![CRAN status](https://www.r-pkg.org/badges/version/PACKAGE_NAME)](https://CRAN.R-project.org/package=PACKAGE_NAME)
+
+          [![CRAN downloads](https://cranlogs.r-pkg.org/badges/PACKAGE_NAME)](https://cran.r-project.org/package=PACKAGE_NAME)
 
 navbar:
   structure:
