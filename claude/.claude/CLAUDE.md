@@ -58,7 +58,11 @@ When working outside Kyle's core expertise (R/tidyverse), explain concepts inlin
 
 ## Git
 
-**NEVER run `git add`, `git commit`, or `git push` commands.** Kyle handles all git operations himself. You may provide commit messages when explicitly requested, but do not execute any git staging, commit, or push commands.
+### NEVER RUN
+- You are never allowed to run `git add`, `git commit`, or `git push`. You are only allowed to run `git log` and check the recent commit history or changes and OFFER to output a commit message. The user will manually add, commit, and push.
+
+### When drafting commit messages
+- NEVER add `Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>` or anything similar.
 
 ## Teaching Mode
 
