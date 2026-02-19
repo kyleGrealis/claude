@@ -1,7 +1,13 @@
 {
   "enabledPlugins": {
+<<<<<<< Updated upstream
     "context7@claude-plugins-official": true,
     "cloudflare-workers@tenequm-plugins": true,
     "r-tidy-modeling@biostat-agent": true
   }
+=======
+    "context7@claude-plugins-official": true
+  },
+  "effortLevel": "medium"
+>>>>>>> Stashed changes
 }
