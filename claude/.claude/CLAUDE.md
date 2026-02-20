@@ -23,6 +23,18 @@
 
 When working outside Kyle's core expertise (R/tidyverse), explain concepts inline as you build. Target the middle ground: skip obvious things, but don't wait until advanced topics to start explaining. Cover Cloudflare (Workers, D1, KV, R2 bindings, Wrangler), JavaScript/Node.js, web infrastructure (DNS routing, HTTP, APIs), and deployment concepts. Keep explanations brief and to the point.
 
+## Pre-commit & Lintr Workflow
+
+When pre-commit hooks fail or lintr reports issues:
+
+1. **Fix the issues** based on error messages (don't skip hooks)
+2. **Let user re-stage and commit** - NEVER run `git add` or `git commit`
+
+**Common pre-commit failures**:
+- styler formatting → already auto-fixed, just re-stage
+- Large files (>200kb) → intentional or mistake?
+- Debug statements (`browser()`, `debug()`) → remove before commit
+
 ## Git
 
 **NEVER RUN** `git add`, `git commit`, or `git push`. Only check history with `git log` and draft commit messages when requested. User commits manually.

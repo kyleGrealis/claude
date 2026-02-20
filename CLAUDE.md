@@ -21,11 +21,22 @@ stow --adopt claude
 claude/
 └── .claude/
     ├── skills/
+    │   ├── commit-message/       # Git commit format conventions
     │   └── personal-context/     # Kyle's background & preferences
+    ├── templates/                # R project config templates
+    │   ├── README.md             # Package README (with placeholders guide)
+    │   ├── CITATION.md           # Citation format
+    │   ├── NEWS.md               # Changelog template
+    │   ├── _pkgdown.yml          # pkgdown site config
+    │   ├── .lintr                # lintr config
+    │   ├── .pre-commit-config.yaml
+    │   └── R/                    # R script templates
+    ├── agents/                   # Empty (removed verbose agents)
     ├── settings.json             # Claude Code settings (synced)
     └── settings.local.json       # Machine-specific (gitignored)
 ```
 
 ## Available Skills
 
+- **commit-message**: Git commit message format and conventions
 - **personal-context**: Kyle's background, expertise, communication preferences
