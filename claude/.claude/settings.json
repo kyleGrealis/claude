@@ -3,5 +3,13 @@
     "context7@claude-plugins-official": true,
     "cloudflare-workers@tenequm-plugins": true
   },
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "permissions": {
+    "deny": [
+      "Bash(git push*)",
+      "Bash(git pull*)",
+      "Bash(git fetch*)",
+      "Bash(git clone*)"
+    ]
+  }
 }
