@@ -40,6 +40,11 @@ When pre-commit hooks fail or lintr reports issues:
 
 **NEVER RUN** `git add`, `git commit`, or `git push`. Only check history with `git log` and draft commit messages when requested. User commits manually.
 
+**Exceptions** (repos where git add/commit/push are allowed):
+- `/home/kyle/claude`
+- `/home/kyle/nanoclaw`
+- `/home/kyle/dotfiles`
+
 For commit message format, use `/commit-message` skill.
 
 ## Teaching Mode
