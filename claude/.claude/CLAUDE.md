@@ -10,6 +10,7 @@
 - **No emdashes (—)** in any user-facing text
 - **Before finishing**: Run `lintr::lint_dir("R/")` and `lintr::lint_dir("tests/")`
 - **Project templates**: Use templates from `~/.claude/templates/` when adding config files to projects
+- **Rhino projects**: Use `rhino::pkg_install()` / `rhino::pkg_remove()` for package management -- never raw `renv::install()` or `renv::remove()`. Rhino wraps renv and keeps `dependencies.R` in sync.
 
 ## Communication
 

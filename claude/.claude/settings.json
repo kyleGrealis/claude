@@ -1,9 +1,4 @@
 {
-  "enabledPlugins": {
-    "context7@claude-plugins-official": true,
-    "cloudflare-workers@tenequm-plugins": true
-  },
-  "effortLevel": "medium",
   "permissions": {
     "deny": [
       "Bash(git push*)",
@@ -11,5 +6,9 @@
       "Bash(git fetch*)",
       "Bash(git clone*)"
     ]
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "cloudflare-workers@tenequm-plugins": true
   }
 }
