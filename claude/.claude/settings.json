@@ -10,5 +10,44 @@
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
     "cloudflare-workers@tenequm-plugins": true
-  }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /home/kyle/dev/claude-memory-compiler && uv run python hooks/session-start.py",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /home/kyle/dev/claude-memory-compiler && uv run python hooks/pre-compact.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /home/kyle/dev/claude-memory-compiler && uv run python hooks/session-end.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "effortLevel": "high"
 }
