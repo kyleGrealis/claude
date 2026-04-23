@@ -1,15 +1,11 @@
 {
   "permissions": {
-    "deny": [
+    "ask": [
       "Bash(git push*)",
       "Bash(git pull*)",
       "Bash(git fetch*)",
       "Bash(git clone*)"
     ]
-  },
-  "enabledPlugins": {
-    "context7@claude-plugins-official": true,
-    "cloudflare-workers@tenequm-plugins": true
   },
   "hooks": {
     "SessionStart": [
@@ -49,5 +45,9 @@
       }
     ]
   },
-  "effortLevel": "high"
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "cloudflare-workers@tenequm-plugins": true
+  },
+  "effortLevel": "xhigh"
 }

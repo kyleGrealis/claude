@@ -44,6 +44,7 @@ When pre-commit hooks fail or lintr reports issues:
 - `/home/kyle/claude`
 - `/home/kyle/nanoclaw`
 - `/home/kyle/dotfiles`
+- `/home/kyle/dev/claude-memory-compiler`
 
 For commit message format, use `/commit-message` skill.
 
