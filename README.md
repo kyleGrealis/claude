@@ -6,10 +6,10 @@ Minimal [Claude Code](https://claude.ai/code) config using [GNU Stow](https://ww
 
 ## Contents
 
-**Skills**: `personal-context` (18 lines), `commit-message` (42 lines)
-**Plugins**: `context7`, `cloudflare-workers`
-**Templates**: R package docs (`README.md`, `CITATION.md`, `NEWS.md`, `_pkgdown.yml`) + configs (`.gitignore`, `.lintr`, `.pre-commit-config.yaml`)
-**Global instructions**: R style, pre-commit/lintr workflow, git workflow, teaching mode
+**Skills**: `personal-context` (18 lines), `commit-message` (42 lines)  
+**Plugins**: `context7`, `cloudflare-workers`  
+**Templates**: R package docs (`README.md`, `CITATION.md`, `NEWS.md`, `_pkgdown.yml`) + configs (`.gitignore`, `.lintr`, `.pre-commit-config.yaml`)  
+**Global instructions**: R style, pre-commit/lintr workflow, git workflow, teaching mode  
 
 ## Installation
 
@@ -22,9 +22,9 @@ Creates symlink: `claude/.claude/` → `~/.claude/`
 
 ## Customizing
 
-1. Fork repo
-2. Update `personal-context/SKILL.md` and `CLAUDE.md`
-3. Modify `settings.json` plugins and templates as needed
+1. Fork repo  
+2. Update `personal-context/SKILL.md` and `CLAUDE.md`  
+3. Modify `settings.json` plugins and templates as needed  
 
 Add skills via `claude/.claude/skills/my-skill/SKILL.md`:
 ```markdown
