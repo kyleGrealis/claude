@@ -1,4 +1,4 @@
-# PACKAGE_NAME
+# PACKAGE_NAME <img src="man/figures/logo.png" align="right" height="130" alt="" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kyleGrealis/PACKAGE_NAME/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kyleGrealis/PACKAGE_NAME/actions/workflows/R-CMD-check.yaml)
