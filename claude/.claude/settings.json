@@ -49,5 +49,5 @@
     "context7@claude-plugins-official": true,
     "cloudflare-workers@tenequm-plugins": true
   },
-  "effortLevel": "xhigh"
+  "effortLevel": "high"
 }
