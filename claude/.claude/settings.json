@@ -1,12 +1,4 @@
 {
-  "permissions": {
-    "ask": [
-      "Bash(git push*)",
-      "Bash(git pull*)",
-      "Bash(git fetch*)",
-      "Bash(git clone*)"
-    ]
-  },
   "hooks": {
     "SessionStart": [
       {
@@ -49,5 +41,38 @@
     "context7@claude-plugins-official": true,
     "cloudflare-workers@tenequm-plugins": true
   },
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git fetch*)",
+      "Bash(ls*)",
+      "Bash(cat*)",
+      "Bash(find*)",
+      "Bash(node*)",
+      "Bash(pnpm*)",
+      "Bash(tsx*)",
+      "Bash(uv*)",
+      "Bash(Rscript*)",
+      "Bash(ssh*)",
+      "Bash(curl*)",
+      "Bash(which*)",
+      "Bash(echo*)",
+      "Bash(pwd*)",
+      "Bash(systemctl status*)",
+      "Bash(systemctl list-unit-files*)",
+      "Bash(trash-put*)",
+      "Bash(trash-list*)",
+      "Bash(trash-restore*)",
+      "Bash(trash-empty*)"
+    ],
+    "deny": [
+      "Bash(sudo*)",
+      "Bash(rm*)"
+    ]
+  }
 }
