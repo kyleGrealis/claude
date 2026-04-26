@@ -67,12 +67,14 @@
       "Bash(systemctl list-unit-files*)",
       "Bash(trash-put*)",
       "Bash(trash-list*)",
-      "Bash(trash-restore*)",
-      "Bash(trash-empty*)"
+      "Bash(trash-restore*)"
     ],
     "deny": [
       "Bash(sudo*)",
       "Bash(rm*)"
+    ],
+    "ask": [
+      "Bash(trash-empty*)"
     ]
   }
 }
