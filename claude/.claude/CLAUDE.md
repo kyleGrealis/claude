@@ -12,6 +12,19 @@
 - **Project templates**: Use templates from `~/.claude/templates/` when adding config files to projects
 - **Rhino projects**: Use `rhino::pkg_install()` / `rhino::pkg_remove()` for package management -- never raw `renv::install()` or `renv::remove()`. Rhino wraps renv and keeps `dependencies.R` in sync.
 
+## Bash Command Style
+
+**Never chain bash commands with `&&`, `;`, `|`, or wrap them in `for`/`while` loops.** Each shell construct that combines or iterates over commands gets re-classified by Claude Code's permission system as a compound command and re-prompts Kyle even when the inner commands are individually allowlisted. This is the single biggest source of permission-prompt friction.
+
+**Instead:**
+- Run multiple single-command Bash calls back-to-back (separate tool invocations).
+- For repo-scoped git operations, use `git -C <path> <command>` rather than `cd <path> && git <command>`.
+- For "do X for each of A, B, C", make N separate Bash calls, not one `for` loop.
+- Use the dedicated tools (Read / Edit / Write / Glob / Grep) instead of bash scripts wherever they fit — they don't go through the bash gate at all.
+- Only chain commands when they form one tightly-coupled atomic operation (e.g. `mkdir -p X && cp file X/`), and even then prefer separate calls if reasonable.
+
+This applies even when running commands in parallel via the multi-tool-call mechanism — those are still individual Bash invocations, no chaining inside any one of them.
+
 ## Communication
 
 - One troubleshooting step at a time
