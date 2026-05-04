@@ -105,6 +105,5 @@
     "context7@claude-plugins-official": true,
     "cloudflare-workers@tenequm-plugins": true
   },
-  "effortLevel": "high",
-  "skipAutoPermissionPrompt": true
+  "effortLevel": "high"
 }
