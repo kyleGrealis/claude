@@ -10,7 +10,9 @@ repos:
     -   id: parsable-R
     -   id: no-browser-statement
     -   id: no-debug-statement
-    -   id: deps-in-desc
+    # Uncomment for R packages (requires DESCRIPTION file).
+    # Will fail in plain R/Quarto projects without a DESCRIPTION.
+    # -   id: deps-in-desc
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:

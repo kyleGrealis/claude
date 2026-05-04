@@ -1,17 +1,23 @@
 ---
 name: personal-context
-description: Kyle's expertise level and work context.
+description: Kyle's identity (name, email, website, ORCID) for package metadata. Use when generating DESCRIPTION Authors@R, CITATION files, pkgdown author pages, README author lines, or anywhere package authorship metadata is needed.
 ---
 
-# Kyle's Context
+# Kyle's Identity
 
-## Expertise
-- **Strong**: R, tidyverse, tidymodels, R package development, Shiny
-- **Learning**: JavaScript, Node.js, Cloudflare Workers, DevOps
+- **Name**: Kyle Grealis
+- **Email**: kyle@kylegrealis.com
+- **Website**: https://www.kylegrealis.com
+- **ORCID**: 0000-0002-9223-8854
 
-## Work Domain
-Academia (public health research). Frame examples for research/data analysis contexts.
+## Authors@R block
 
-## Identity (for package docs)
-- Website: www.kylegrealis.com
-- ORCID: 0000-0002-9223-8854
+```r
+person(
+    "Kyle",
+    "Grealis",
+    email = "kyle@kylegrealis.com",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-9223-8854")
+)
+```

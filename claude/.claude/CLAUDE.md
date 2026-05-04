@@ -2,89 +2,37 @@
 
 ## Fleet & Machine Roles
 
-- **archMitters**: Daily-driver desktop. Arch Linux + Cosmic (Wayland). Only GUI machine in the fleet — graphical apps live here (Positron, Ghostty, LibreOffice, OnlyOffice, Proton Mail, etc.). Stable; no more distro-hopping.
-- **pi5**: Headless Arch ARM server. Hosts NanoClaw and Tailscale main exit node. SSH-only access.
-- **pi4**: Headless Arch ARM server. Hosts Shiny server + static HTML. SSH-only access.
+- **archMitters**: Daily-driver desktop. Arch Linux + Cosmic (Wayland). Only GUI machine -- graphical apps live here (Positron, Ghostty, LibreOffice, OnlyOffice, Proton Mail). Don't suggest GNOME/KDE.
+- **pi5**: Headless Arch ARM server. Hosts NanoClaw + Tailscale main exit. SSH-only.
+- **pi4**: Headless Arch ARM server. Hosts Shiny + static HTML. SSH-only.
 
-Don't suggest desktop tools, GUI apps, or X11/Wayland configs for the Pis. Don't suggest GNOME/KDE on archMitters — it's Cosmic.
+Don't suggest desktop tools, GUI apps, or X11/Wayland configs for the Pis.
+
+## How to work with Kyle
+
+- Senior R/data-science engineer in academia / public health. Strong: R, tidyverse, tidymodels, package dev, Shiny. Currently learning: JS/Node, Cloudflare Workers, DevOps -- explain those briefly inline as you build.
+- **Propose decisively, don't survey.** Lead with "I recommend X because Y." Only ask when the call is genuinely close.
+- **Batch questions** in one `AskUserQuestion` call (1-4 per call). Don't drip-feed.
+- **Don't ask permission for reversible actions** -- just do them and note what you did.
+- One troubleshooting step at a time; max 2 solutions when stuck. Say "I don't know" if unsure.
+- Include URLs/DOIs when citing references. Define acronyms on first use.
+- **No emdashes anywhere** in user-facing text or code.
 
 ## File Operations
 
-**Always use `trash` (from trash-cli) for deletions — never `rm -rf` or bare `rm`.** Deletions must be recoverable. Use `git rm` for staged repo deletions (recoverable via git history). If `trash` isn't available on a host, ask before falling back to `rm`.
-
-## R Style (Kyle-specific deviations)
-
-- Use `|>` not `%>%`
-- Use `rlang::abort()` for package errors
-- **Double quotes everywhere** (exception: strings containing double quotes)
-- **90 character line limit** (enforced by lintr)
-- **No vertical alignment** of function arguments
-- **No emdashes (—)** in any user-facing text
-- **Before finishing**: Run `lintr::lint_dir("R/")` and `lintr::lint_dir("tests/")`
-- **Project templates**: Use templates from `~/.claude/templates/` when adding config files to projects
-- **Rhino projects**: Use `rhino::pkg_install()` / `rhino::pkg_remove()` for package management -- never raw `renv::install()` or `renv::remove()`. Rhino wraps renv and keeps `dependencies.R` in sync.
+Use `trash` (trash-cli) for deletions -- never `rm` / `rm -rf`. `Bash(rm*)` is denied at the harness level; don't try to work around it. Use `git rm` for tracked files.
 
 ## Bash Command Style
 
-**Never chain bash commands with `&&`, `;`, `|`, or wrap them in `for`/`while` loops.** Each shell construct that combines or iterates over commands gets re-classified by Claude Code's permission system as a compound command and re-prompts Kyle even when the inner commands are individually allowlisted. This is the single biggest source of permission-prompt friction.
-
-**Instead:**
-- Run multiple single-command Bash calls back-to-back (separate tool invocations).
-- For repo-scoped git operations, use `git -C <path> <command>` rather than `cd <path> && git <command>`.
-- For "do X for each of A, B, C", make N separate Bash calls, not one `for` loop.
-- Use the dedicated tools (Read / Edit / Write / Glob / Grep) instead of bash scripts wherever they fit — they don't go through the bash gate at all.
-- Only chain commands when they form one tightly-coupled atomic operation (e.g. `mkdir -p X && cp file X/`), and even then prefer separate calls if reasonable.
-
-This applies even when running commands in parallel via the multi-tool-call mechanism — those are still individual Bash invocations, no chaining inside any one of them.
-
-## Communication
-
-- One troubleshooting step at a time
-- Max 2 solutions when troubleshooting
-- Include URLs/DOIs for references
-- Define acronyms on first use
-- Say "I don't know" if unsure
-
-## Teachable Moments
-
-When working outside Kyle's core expertise (R/tidyverse), explain concepts inline as you build. Target the middle ground: skip obvious things, but don't wait until advanced topics to start explaining. Cover Cloudflare (Workers, D1, KV, R2 bindings, Wrangler), JavaScript/Node.js, web infrastructure (DNS routing, HTTP, APIs), and deployment concepts. Keep explanations brief and to the point.
-
-## Pre-commit & Lintr Workflow
-
-When pre-commit hooks fail or lintr reports issues:
-
-1. **Fix the issues** based on error messages (don't skip hooks)
-2. **Let user re-stage and commit** - NEVER run `git add` or `git commit`
-
-**Common pre-commit failures**:
-- styler formatting → already auto-fixed, just re-stage
-- Large files (>200kb) → intentional or mistake?
-- Debug statements (`browser()`, `debug()`) → remove before commit
+Don't chain bash with `&&` / `;` / `|` or wrap in `for` / `while` loops -- the harness re-prompts on compound commands even when the inner parts are individually allowlisted. Use multiple single-command Bash calls back-to-back (parallel where independent). For repo-scoped git, use `git -C <path> <cmd>`. Atomic exception OK: `mkdir -p X && cp file X/`.
 
 ## Git
 
-**NEVER RUN** `git add`, `git commit`, or `git push`. Only check history with `git log` and draft commit messages when requested. User commits manually.
+Default: **never** run `git add` / `git commit` / `git push`. Draft messages with `/commit-message`; let Kyle stage and commit.
 
-**Exceptions** (repos where git add/commit/push are allowed):
+**Trusted repos** (auto-allowed for full git, including push) -- use `git -C <path> <cmd>` form so the machine permission rule matches:
+
 - `/home/kyle/claude`
 - `/home/kyle/nanoclaw`
 - `/home/kyle/dotfiles`
 - `/home/kyle/dev/claude-memory-compiler`
-
-For commit message format, use `/commit-message` skill.
-
-## Teaching Mode
-
-When a project enables teaching mode (indicated by `teaching_mode: true` in the project's `.claude/CLAUDE.md`):
-
-1. **Check for a learning log** at `.claude/_learning-log.md` (or path specified in project config). This location ensures it's automatically gitignored since `.claude/` is typically in .gitignore.
-2. **Adjust explanation depth based on topic category**:
-   - **Mastered**: No explanations, just execute. Kyle knows this.
-   - **Currently Learning**: Provide hints and guidance, not full explanations. Let Kyle figure it out with nudges.
-   - **New/Fuzzy**: One sentence per new idea. For functions, packages, or arguments, be concise and include only the necessary bits to continue the project.
-3. **Proactively suggest log updates**: When Kyle demonstrates understanding of a "Currently Learning" topic, suggest moving it to "Mastered". When he's clearly stuck on something "New", acknowledge it and keep it there.
-4. **Default behavior**: If teaching mode is enabled but no learning log exists, ask Kyle whether to create a learning log or toggle off teaching mode. Don't proceed until this is resolved.
-
-**Verbosity rule**: Teaching mode is NOT a tutorial. Keep it tight. No paragraphs, no over-explaining. Just enough to unblock and continue.
-
-The learning log should be maintained collaboratively. Don't update it without Kyle's confirmation, but do suggest updates when progress is evident.
