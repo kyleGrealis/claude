@@ -1,5 +1,17 @@
 # Global Claude Code Preferences
 
+## Fleet & Machine Roles
+
+- **archMitters**: Daily-driver desktop. Arch Linux + Cosmic (Wayland). Only GUI machine in the fleet — graphical apps live here (Positron, Ghostty, LibreOffice, OnlyOffice, Proton Mail, etc.). Stable; no more distro-hopping.
+- **pi5**: Headless Arch ARM server. Hosts NanoClaw and Tailscale main exit node. SSH-only access.
+- **pi4**: Headless Arch ARM server. Hosts Shiny server + static HTML. SSH-only access.
+
+Don't suggest desktop tools, GUI apps, or X11/Wayland configs for the Pis. Don't suggest GNOME/KDE on archMitters — it's Cosmic.
+
+## File Operations
+
+**Always use `trash` (from trash-cli) for deletions — never `rm -rf` or bare `rm`.** Deletions must be recoverable. Use `git rm` for staged repo deletions (recoverable via git history). If `trash` isn't available on a host, ask before falling back to `rm`.
+
 ## R Style (Kyle-specific deviations)
 
 - Use `|>` not `%>%`
